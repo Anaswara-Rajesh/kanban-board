@@ -6,7 +6,7 @@ interface ColumnProps {
   title: string;
   type: ColumnType;
   tasks: TaskType[];
-  onEditTask: (id: string, newTitle: string) => void;
+  onEditTask: (id: string, newTitle: string, newDescription: string) => void;
   onDeleteTask: (id: string) => void;
   onDragStart: (e: React.DragEvent, id: string) => void;
   onDragOver: (e: React.DragEvent) => void;
@@ -41,6 +41,7 @@ const Column: React.FC<ColumnProps> = ({
             key={task.id}
             id={task.id}
             title={task.title}
+            description={task.description}
             onEdit={onEditTask}
             onDelete={onDeleteTask}
             onDragStart={onDragStart}
